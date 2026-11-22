@@ -1,0 +1,190 @@
+import com.google.gms.googleservices.GoogleServicesPlugin.MissingGoogleServicesStrategy
+import java.util.Properties
+
+
+plugins {
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.kotlin.compose)
+  alias(libs.plugins.google.devtools.ksp)
+  alias(libs.plugins.secrets)
+  alias(libs.plugins.google.services)
+}
+
+android {
+  namespace = "com.example"
+  compileSdk { version = release(36) { minorApiLevel = 1 } }
+
+  defaultConfig {
+    applicationId = "com.aistudio.fellahmarket.smxqrk"
+    minSdk = 26
+    targetSdk = 36
+    versionCode = 3
+    versionName = "2.1.0"
+
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+    val configProps = Properties().apply {
+      val envFile = rootProject.file(".env")
+      if (envFile.exists()) envFile.inputStream().use { load(it) }
+      val localPropsFile = rootProject.file("local.properties")
+      if (localPropsFile.exists()) localPropsFile.inputStream().use { load(it) }
+    }
+    fun resolveConfig(key: String): String {
+      val fromFile = configProps.getProperty(key)?.trim()?.trim('"')
+      val fromGradle = project.findProperty(key)?.toString()?.trim()?.trim('"')
+      val fromEnv = System.getenv(key)?.trim()?.trim('"')
+      return listOf(fromGradle, fromFile, fromEnv).firstOrNull { !it.isNullOrEmpty() }.orEmpty()
+    }
+    fun escapeForBuildConfig(value: String): String =
+      value.replace("\\", "\\\\").replace("\"", "\\\"")
+
+    val supabaseUrl = resolveConfig("SUPABASE_URL")
+    val supabaseAnonKey = resolveConfig("SUPABASE_ANON_KEY")
+    val demoModeRaw = resolveConfig("DEMO_MODE")
+    val demoMode = when (demoModeRaw.lowercase()) {
+      "false", "0", "no" -> false
+      "true", "1", "yes" -> true
+      else -> supabaseUrl.isBlank() || supabaseAnonKey.isBlank()
+    }
+
+    buildConfigField("String", "SUPABASE_URL", "\"${escapeForBuildConfig(supabaseUrl)}\"")
+    buildConfigField("String", "SUPABASE_ANON_KEY", "\"${escapeForBuildConfig(supabaseAnonKey)}\"")
+    buildConfigField("boolean", "DEMO_MODE", demoMode.toString())
+  }
+
+  // Do not remove or modify these signingConfigs. They are necessary for building, installing,
+  // and updating Android apps in AI Studio.
+  signingConfigs {
+    create("release") {
+      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/my-upload-key.jks"
+      storeFile = file(keystorePath)
+      storePassword = System.getenv("STORE_PASSWORD")
+      keyAlias = "upload"
+      keyPassword = System.getenv("KEY_PASSWORD")
+    }
+    create("debugConfig") {
+      storeFile = file("${rootDir}/debug.keystore")
+      storePassword = "android"
+      keyAlias = "androiddebugkey"
+      keyPassword = "android"
+    }
+  }
+
+  buildTypes {
+    release {
+      isCrunchPngs = false
+      isMinifyEnabled = false
+      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+      // Do not remove or modify this signingConfig assignment. It is necessary for Android apps in
+      // AI Studio.
+      signingConfig = signingConfigs.getByName("release")
+    }
+    debug {
+      // Do not remove or modify this signingConfig assignment. It is necessary for Android apps in
+      // AI Studio.
+      signingConfig = signingConfigs.getByName("debugConfig")
+    }
+  }
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+  }
+  buildFeatures {
+    compose = true
+    buildConfig = true
+  }
+  testOptions {
+    unitTests {
+      isIncludeAndroidResources = true
+      all {
+        val candidates = listOf(
+          file("${System.getProperty("user.home")}/.m2/repository/org/robolectric/android-all-instrumented/16-robolectric-13921718-i7"),
+          file("/home/appuser/.m2/repository/org/robolectric/android-all-instrumented/16-robolectric-13921718-i7")
+        )
+        val cachedRoboDir = candidates.firstOrNull { it.exists() }
+        if (cachedRoboDir != null) {
+          it.systemProperty("robolectric.offline", "true")
+          it.systemProperty("robolectric.dependency.dir", cachedRoboDir.absolutePath)
+        }
+      }
+    }
+  }
+  dependenciesInfo {
+    includeInApk = false
+    includeInBundle = true
+  }
+}
+
+// Configure the Secrets Gradle Plugin to use .env and .env.example files
+// to match the convention used in Web projects.
+secrets {
+  propertiesFileName = ".env"
+  defaultPropertiesFileName = ".env.example"
+  ignoreList.add("FIREBASE_APPCHECK_DEBUG_TOKEN")
+  ignoreList.add("SUPABASE_URL")
+  ignoreList.add("SUPABASE_ANON_KEY")
+  ignoreList.add("DEMO_MODE")
+}
+
+googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.WARN }
+
+// Some unused dependencies are commented out below instead of being removed.
+// This makes it easy to add them back in the future if needed.
+dependencies {
+  implementation(platform(libs.androidx.compose.bom))
+  // implementation(platform(libs.firebase.bom))
+  // implementation(libs.accompanist.permissions)
+  implementation(libs.androidx.activity.compose)
+  // implementation(libs.androidx.camera.camera2)
+  // implementation(libs.androidx.camera.core)
+  // implementation(libs.androidx.camera.lifecycle)
+  // implementation(libs.androidx.camera.view)
+  implementation(libs.androidx.compose.material.icons.core)
+  implementation(libs.androidx.compose.material.icons.extended)
+  implementation(libs.androidx.compose.material3)
+  implementation(libs.androidx.compose.ui)
+  implementation(libs.androidx.compose.ui.graphics)
+  implementation(libs.androidx.compose.ui.tooling.preview)
+  implementation(libs.androidx.core.ktx)
+  implementation(libs.androidx.datastore.preferences)
+  implementation(libs.androidx.lifecycle.runtime.compose)
+  implementation(libs.androidx.lifecycle.runtime.ktx)
+  implementation(libs.androidx.lifecycle.viewmodel.compose)
+  implementation(libs.androidx.navigation.compose)
+  implementation(libs.androidx.room.ktx)
+  implementation(libs.androidx.room.runtime)
+  implementation(libs.coil.compose)
+  // implementation(libs.converter.moshi)
+  // implementation(libs.firebase.ai)
+  // implementation(libs.firebase.firestore)
+  // implementation(libs.firebase.auth)
+  // implementation(libs.androidx.credentials)
+  // implementation(libs.androidx.credentials.play.services)
+  // implementation(libs.googleid)
+  // implementation(libs.firebase.appcheck.recaptcha)
+  // implementation(libs.firebase.appcheck.debug)
+  implementation(libs.androidx.work.runtime.ktx)
+  implementation(libs.kotlinx.coroutines.android)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(libs.logging.interceptor)
+  implementation(libs.moshi.kotlin)
+  implementation(libs.okhttp)
+  // implementation(libs.play.services.location)
+  // implementation(libs.retrofit)
+  testImplementation(libs.androidx.compose.ui.test.junit4)
+  testImplementation(libs.androidx.core)
+  testImplementation(libs.androidx.junit)
+  testImplementation(libs.junit)
+  testImplementation(libs.kotlinx.coroutines.test)
+  testImplementation(libs.mockwebserver)
+  testImplementation(libs.robolectric)
+  androidTestImplementation(platform(libs.androidx.compose.bom))
+  androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+  androidTestImplementation(libs.androidx.espresso.core)
+  androidTestImplementation(libs.androidx.junit)
+  androidTestImplementation(libs.androidx.runner)
+  debugImplementation(libs.androidx.compose.ui.test.manifest)
+  debugImplementation(libs.androidx.compose.ui.tooling)
+  "ksp"(libs.androidx.room.compiler)
+  "ksp"(libs.moshi.kotlin.codegen)
+}

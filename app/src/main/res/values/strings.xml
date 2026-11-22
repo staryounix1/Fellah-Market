@@ -1,0 +1,273 @@
+<resources>
+    <string name="app_name">Fellah Market</string>
+    <string name="tagline_onboarding">البيع والشراء نيشان بلا سمسار</string>
+    <string name="choose_language">اختار اللغة ديالك</string>
+    <string name="lang_darija">الدارجة المغربية</string>
+    <string name="lang_arabic">العربية الفصحى</string>
+    <string name="lang_french">Français</string>
+    <string name="continue_btn">كمل</string>
+    <string name="back_btn">رجع</string>
+    <string name="save_btn">سجل</string>
+    <string name="cancel_btn">إلغاء</string>
+    <string name="confirm_btn">تأكيد</string>
+    <string name="close_btn">سد</string>
+
+    <!-- Auth & PIN -->
+    <string name="auth_title">دخول برقم الهاتف والرمز السري</string>
+    <string name="auth_subtitle">دخل رقم الهاتف والرمز السري (6 أرقام على الأقل)</string>
+    <string name="login_tab">تسجيل الدخول</string>
+    <string name="signup_tab">حساب جديد</string>
+    <string name="phone_label">رقم الهاتف</string>
+    <string name="phone_hint">0612345678</string>
+    <string name="pin_label">الرمز السري (6 أرقام أو أكثر)</string>
+    <string name="confirm_pin_label">تأكيد الرمز السري</string>
+    <string name="pin_rules_hint">اختار على الأقل 6 أرقام، بلا أرقام متشابهة (بحال 111111) وبلا تسلسل (بحال 123456).</string>
+    <string name="login_btn">دخول</string>
+    <string name="signup_btn">فتح حساب</string>
+    <string name="invalid_phone">عفاك دخل رقم هاتف مغربي صحيح</string>
+    <string name="invalid_credentials_error">رقم الهاتف أو الرمز السري غير صحيح</string>
+    <string name="phone_already_registered_error">تعذر التسجيل بهاد المعلومات. يلا عندك حساب ديجا، دوز لتسجيل الدخول.</string>
+    <string name="pin_too_short_error">الرمز السري خاصو يكون فيه 6 أرقام على الأقل</string>
+    <string name="pin_weak_repeated_error">الرمز السري ضعيف: ما تستعملش نفس الرقم مكرر</string>
+    <string name="pin_weak_sequence_error">الرمز السري ضعيف: ما تستعملش أرقام متتابعة بحال 123456</string>
+    <string name="pin_mismatch_error">الرمز السري وتأكيده ما متطابقينش</string>
+    <string name="account_locked_error">توقف الدخول مؤقتاً بعد 5 محاولات غالطة. تسنا %1$d د و %2$d ث.</string>
+    <string name="quick_demo_accounts">حسابات سريعة للتجربة</string>
+    <string name="demo_farmer">فلاح موثق (لحسن - اشتوكة)</string>
+    <string name="demo_buyer">مشتري موثق (مطعم تافراوت - أكادير)</string>
+    <string name="demo_admin">مدير المنصة (Admin)</string>
+
+    <!-- Role & Profile Setup -->
+    <string name="choose_role_title">شنو الدور ديالك؟</string>
+    <string name="role_farmer">فلاح / تعاونية</string>
+    <string name="role_farmer_desc">كنبيع المنتوج الفلاحي، الزيتون، العسل أو الماشية</string>
+    <string name="role_buyer">مشتري مهني</string>
+    <string name="role_buyer_desc">مطعم، فندق، بقالة، تعاونية أو بائع بالجملة</string>
+    <string name="role_admin">إدارة</string>
+
+    <string name="profile_setup_title">عمر المعلومات ديالك</string>
+    <string name="full_name_label">السمية الكاملة</string>
+    <string name="farm_name_label">اسم الضيعة أو التعاونية (اختياري)</string>
+    <string name="business_name_label">اسم المحل أو الشركة</string>
+    <string name="business_type_label">نوع النشاط</string>
+    <string name="biz_restaurant">مطعم</string>
+    <string name="biz_hotel">فندق</string>
+    <string name="biz_grocery">بقالة / سوبرماركت</string>
+    <string name="biz_wholesaler">بيع بالجملة</string>
+    <string name="biz_cooperative">تعاونية / مصنع</string>
+    <string name="region_label">الجهة</string>
+    <string name="city_label">المدينة / الجماعة</string>
+    <string name="categories_interest_label">المنتوجات اللي كتهمك</string>
+    <string name="submit_profile_btn">سجل الحساب</string>
+
+    <!-- Verification -->
+    <string name="status_pending">قيد المراجعة</string>
+    <string name="status_verified">حساب موثق</string>
+    <string name="status_rejected">مرفوض</string>
+    <string name="verification_banner_pending">الحساب ديالك كيتراجع من عند الإدارة. ملي يتأكد غادي تقدر تنشر العروض والطلبات.</string>
+    <string name="verification_banner_rejected">الحساب مرفوض: %1$s</string>
+    <string name="verified_only_msg">غير الحسابات الموثقة اللي كتقدر تنشر أو تصيفط طلب.</string>
+
+    <!-- Navigation -->
+    <string name="nav_market">السوق</string>
+    <string name="nav_my_offers">عروضي</string>
+    <string name="nav_wanted">مطلوب</string>
+    <string name="nav_deals">الصفقات</string>
+    <string name="nav_prices">الأسعار</string>
+    <string name="nav_profile">حسابي</string>
+    <string name="nav_admin">الإدارة</string>
+
+    <!-- Offers & Catalog -->
+    <string name="create_offer_btn">حط عرض جديد</string>
+    <string name="create_offer_title">عرض جديد فـ أقل من دقيقة</string>
+    <string name="step_select_product">1. اختار المنتوج</string>
+    <string name="step_offer_details">2. تفاصيل المنتوج</string>
+    <string name="step_media_voice">3. الصور والصوت</string>
+    <string name="propose_other_product">ما لقيتيش المنتوج؟ اقترح منتوج آخر</string>
+    <string name="propose_product_title">اقتراح منتوج جديد</string>
+    <string name="proposed_name_label">اسم المنتوج المقترح</string>
+    <string name="proposed_unit_label">الوحدة المقترحة</string>
+    <string name="proposed_notes_label">ملاحظات للإدارة</string>
+    <string name="submit_proposal_btn">صيفط الاقتراح</string>
+    <string name="proposal_sent_msg">تتوصلات الإدارة بالاقتراح ديالك</string>
+
+    <string name="quantity_label">الكمية</string>
+    <string name="unit_label">الوحدة</string>
+    <string name="asking_price_label">الثمن للوحدة (درهم)</string>
+    <string name="ready_date_label">تاريخ الجاهزية</string>
+    <string name="today_label">اليوم</string>
+    <string name="tomorrow_label">غدا</string>
+    <string name="in_3_days_label">بعد 3 أيام</string>
+    <string name="in_7_days_label">بعد سيمانة</string>
+    <string name="photos_label">الصور (من 1 حتى لـ 4)</string>
+    <string name="add_photo_btn">زيد صورة</string>
+    <string name="voice_note_label">رسالة صوتية (اختياري - حتى لـ 60 ثانية)</string>
+    <string name="record_voice_btn">سجل الصوت</string>
+    <string name="stop_voice_btn">حبس التسجيل</string>
+    <string name="play_voice_btn">سمع الصوت</string>
+    <string name="pause_voice_btn">وقف</string>
+    <string name="delete_voice_btn">مسح الصوت</string>
+    <string name="mic_permission_needed">عفاك عطينا الإذن ديال الميكروفون باش تسجل صوتك</string>
+    <string name="publish_offer_btn">نشر العرض</string>
+    <string name="save_offline_btn">حفظ بلا أنترنيت</string>
+    <string name="price_hint_above">تنبيه: هاد الثمن طالع بزاف على معدل السوق (%1$s درهم)</string>
+    <string name="price_hint_below">تنبيه: هاد الثمن هابط بزاف على معدل السوق (%1$s درهم)</string>
+    <string name="price_hint_good">ثمن مناسب مقارنة بمعدل السوق (%1$s درهم)</string>
+
+    <string name="offer_status_active">نشط</string>
+    <string name="offer_status_reserved">محجوز</string>
+    <string name="offer_status_sold">تباع</string>
+    <string name="offer_status_paused">متوقف</string>
+    <string name="offer_status_expired">منتهي</string>
+
+    <string name="action_edit">تعديل</string>
+    <string name="action_pause">توقيف</string>
+    <string name="action_activate">تفعيل</string>
+    <string name="action_duplicate">نسخ</string>
+    <string name="action_mark_sold">تم البيع</string>
+    <string name="incoming_requests_count">%1$d طلبات واردة</string>
+
+    <!-- Buyer Browsing & Filters -->
+    <string name="search_hint">قلب على منتوج أو مدينة...</string>
+    <string name="all_categories">كلشي</string>
+    <string name="filters_btn">فلاتر</string>
+    <string name="save_filter_btn">حفظ البحث للتنبيه</string>
+    <string name="saved_filters_title">البحوث المحفوظة</string>
+    <string name="sort_label">ترتيب حسب</string>
+    <string name="sort_newest">الجديد الأول</string>
+    <string name="sort_price_low">أرخص ثمن</string>
+    <string name="sort_rating">أحسن تقييم</string>
+    <string name="sort_distance">الأقرب ليك</string>
+    <string name="max_price_label">أعلى ثمن (درهم)</string>
+    <string name="min_qty_label">أقل كمية</string>
+    <string name="clear_filters_btn">مسح الفلاتر</string>
+    <string name="apply_filters_btn">تطبيق</string>
+    <string name="empty_offers_title">ما كاين حتى عرض دابا</string>
+    <string name="empty_offers_desc">جرب تبدل الفلاتر أو قلب فـ مدن أخرى فـ سوس ماسة</string>
+
+    <!-- Offer Detail & Requests -->
+    <string name="offer_detail_title">تفاصيل العرض</string>
+    <string name="seller_label">الفلاح / التعاونية</string>
+    <string name="attributes_label">المواصفات والجودة</string>
+    <string name="price_trend_label">تطور ثمن المنتوج (30 يوم)</string>
+    <string name="send_request_btn">صيفط طلب الشراء</string>
+    <string name="your_offered_price">الثمن المقترح (درهم)</string>
+    <string name="delivery_type_label">طريقة الاستلام</string>
+    <string name="pickup_farm">من الضيعة (Pickup)</string>
+    <string name="delivery_buyer">توصيل لعندي</string>
+    <string name="request_note_label">ملاحظة (اختياري)</string>
+
+    <!-- Wanted Posts -->
+    <string name="wanted_title">طلبات المشترين (مطلوب)</string>
+    <string name="post_wanted_btn">نشر طلب منتوج</string>
+    <string name="respond_wanted_btn">جاوب الفلاح / قدم عرضك</string>
+    <string name="max_budget_label">أقصى ثمن (درهم)</string>
+    <string name="needed_date_label">تاريخ الحاجة</string>
+    <string name="empty_wanted_title">ما كاين حتى طلب مفتوح</string>
+
+    <!-- Deals & Ratings -->
+    <string name="deals_title">الصفقات والمفاوضات</string>
+    <string name="deal_requested">طلب جديد</string>
+    <string name="deal_countered">عرض مضاد</string>
+    <string name="deal_accepted">مقبولة</string>
+    <string name="deal_completed">مكملة</string>
+    <string name="deal_cancelled">ملغاة</string>
+    <string name="accept_btn">قبول</string>
+    <string name="reject_btn">رفض</string>
+    <string name="counter_offer_btn">ثمن آخر</string>
+    <string name="confirm_completion_btn">تأكيد إتمام البيع (الدفع كاش)</string>
+    <string name="waiting_other_confirm">كنتسناو تأكيد الطرف الآخر</string>
+    <string name="contact_whatsapp">تواصل فـ واتساب</string>
+    <string name="contact_call">عيط فـ التيليفون</string>
+    <string name="phone_locked_hint">الرقم كيبان غير ملي كتقبل الصفقة</string>
+    <string name="rate_partner_btn">قيم التعامل</string>
+    <string name="rating_title">التقييم ديالك</string>
+    <string name="rating_comment_hint">تعليق قصير (اختياري)</string>
+    <string name="deal_history_title">سجل المراحل</string>
+    <string name="cash_on_delivery_note">الأداء كاش عند الاستلام خارج التطبيق</string>
+
+    <!-- Market Prices -->
+    <string name="prices_title">أسعار السوق (الشفافية)</string>
+    <string name="avg_market_price">معدل السوق</string>
+    <string name="wholesale_ref_price">ثمن الجملة المرجعي</string>
+    <string name="last_30_days">آخر 30 يوم</string>
+    <string name="not_enough_data">البيانات مازال قليلة لهادا المنتوج</string>
+
+    <!-- Offline & Notifications -->
+    <string name="offline_banner">أنت بلا أنترنيت — التعديلات غادي تسجل وتتصيفط ملي يرجع الويفي</string>
+    <string name="pending_sync_badge">كيتسنى الإرسال</string>
+    <string name="sync_now_btn">مزامنة دابا (%1$d)</string>
+    <string name="simulate_offline_toggle">وضع بدون أنترنيت (تجربة)</string>
+    <string name="notifications_title">التنبيهات</string>
+    <string name="mark_all_read">قريت كلشي</string>
+    <string name="empty_notifications">ما كاين حتى تنبيه جديد</string>
+
+    <!-- Admin Dashboard -->
+    <string name="admin_title">لوحة الإدارة</string>
+    <string name="admin_tab_verifications">التحقق</string>
+    <string name="admin_tab_catalog">الكتالوج</string>
+    <string name="admin_tab_prices">الأسعار</string>
+    <string name="admin_tab_moderation">المراقبة</string>
+    <string name="approve_btn">موافقة</string>
+    <string name="reject_reason_hint">سبب الرفض</string>
+    <string name="add_product_btn">زيد منتوج للكتالوج</string>
+    <string name="set_ref_price_btn">تحديث ثمن مرجعي</string>
+    <string name="proposed_products_section">منتوجات مقترحة من الفلاحين</string>
+    <string name="reports_section">البلاغات والصفقات</string>
+    <string name="resolve_btn">حل المشكل</string>
+
+    <!-- Units & Common -->
+    <string name="unit_kg">كيلو</string>
+    <string name="unit_ton">طن</string>
+    <string name="unit_liter">لتر</string>
+    <string name="unit_piece">حبة</string>
+    <string name="unit_head">راس</string>
+    <string name="unit_crate">صندوق</string>
+    <string name="currency_mad">درهم</string>
+    <string name="logout_btn">تسجيل الخروج</string>
+    <string name="switch_account_btn">بدل الحساب</string>
+    <string name="error_generic">وقع شي مشكل، عاود جرب</string>
+    <string name="required_field">هاد الخانة ضرورية</string>
+    <string name="report_offer_btn">بلغ على هاد العرض</string>
+    <string name="report_sent_msg">تم إرسال البلاغ للإدارة</string>
+
+    <!-- Real Auth, PIN Management, Sync & Diagnostics Strings -->
+    <string name="auth_rate_limited_error">كثرتي المحاولات، تسنا شوية وعاد جرب</string>
+    <string name="network_error_msg">ما كاينش أنترنيت، تأكد من الويفي أو 4G</string>
+    <string name="session_expired_error">سالات الجلسة ديالك، عاود سجل الدخول</string>
+    <string name="supabase_not_configured_error">إعدادات السيرفر ناقصة (SUPABASE_URL / ANON_KEY)</string>
+    <string name="forbidden_error">ما عندكش الصلاحية لهاد العملية</string>
+    <string name="wrong_current_pin_error">الرمز السري الحالي ما صحيحش</string>
+    <string name="change_pin_btn">تبديل الرمز السري</string>
+    <string name="change_pin_title">تبديل الرمز السري</string>
+    <string name="force_change_pin_title">ضروري تبدل الرمز المؤقت</string>
+    <string name="force_change_pin_subtitle">الإدارة دارت لك رمز مؤقت. دخل الرمز المؤقت وختار رمز سري جديد باش تكمل.</string>
+    <string name="current_pin_label">الرمز السري الحالي</string>
+    <string name="new_pin_label">الرمز السري الجديد</string>
+    <string name="confirm_new_pin_label">تأكيد الرمز الجديد</string>
+    <string name="pin_changed_success">تبدل الرمز السري بنجاح</string>
+    <string name="reset_pin_btn">تغيير الرمز المؤقت</string>
+    <string name="reset_pin_dialog_title">إعادة تعيين الرمز السري للمستعمل</string>
+    <string name="reset_pin_call_warning">عيط للمستعمل وتأكد من الهوية ديالو عاد عطيه رمز مؤقت قوي. خاصو يبدلو فأول دخول.</string>
+    <string name="temp_pin_label">الرمز المؤقت (6+ أرقام)</string>
+    <string name="pin_reset_success">تبدل الرمز المؤقت وتسجلات العملية فالأرشيف</string>
+    <string name="diagnostics_btn">حالة التطبيق والتشخيص</string>
+    <string name="diagnostics_title">تشخيص الاتصال والمزامنة</string>
+    <string name="diag_backend_mode">وضع الاتصال بالسيرفر</string>
+    <string name="diag_phone_masked">رقم الهاتف (مخفي للأمان)</string>
+    <string name="diag_session_status">حالة الجلسة المشفرة</string>
+    <string name="diag_network_status">حالة الشبكة</string>
+    <string name="diag_sync_status">طابور المزامنة</string>
+    <string name="sync_failed_banner">%1$d عمليات ما تزامنوش</string>
+    <string name="retry_btn">عاود جرب</string>
+    <string name="media_uploading_badge">الصور كيتحملو…</string>
+    <string name="media_failed_badge">فشل تحميل الصور</string>
+    <string name="verification_doc_label">وثيقة التعريف أو شهادة التعاونية (اختياري)</string>
+    <string name="upload_verification_doc_btn">اختار صورة الوثيقة</string>
+    <string name="view_verification_doc_btn">شوف الوثيقة</string>
+    <string name="verification_doc_uploaded">تختارات الوثيقة وغادي تترفع للإدارة</string>
+    <string name="load_more_btn">زيد عروض أخرى</string>
+    <string name="add_favorite">زيد للمفضلة</string>
+    <string name="remove_favorite">حيد من المفضلة</string>
+    <string name="favorites_only">المفضلة</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "Fellah-Market",
+  "description": "Direct agricultural B2B marketplace connecting Moroccan farmers to professional buyers with data-driven catalog, voice notes, deals, and market price transparency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
