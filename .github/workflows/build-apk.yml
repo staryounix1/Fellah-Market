@@ -29,7 +29,7 @@ jobs:
           gradle-version: '9.3.1'
 
       - name: Build APK
-        working-directory: Fellah-Market
+        
         run: |
           if [ -f gradlew ]; then
             chmod +x gradlew
