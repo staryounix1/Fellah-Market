@@ -1,0 +1,21 @@
+workflows:
+  fellah-market:
+    name: Fellah Market Android APK
+    max_build_duration: 60
+
+    environment:
+      java: 17
+
+    scripts:
+      - name: Configure Android SDK
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
+      - name: Install Gradle 9.3.1 and Build APK
+        script: |
+          curl -L https://services.gradle.org/distributions/gradle-9.3.1-bin.zip -o /tmp/gradle.zip
+          unzip -q /tmp/gradle.zip -d /tmp
+          /tmp/gradle-9.3.1/bin/gradle --no-daemon assembleDebug
+
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
