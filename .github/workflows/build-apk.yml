@@ -1,0 +1,55 @@
+name: Build Fellah Market APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Locate project
+        run: |
+          if [ -f "settings.gradle.kts" ]; then
+            echo "PROJECT_DIR=." >> $GITHUB_ENV
+          elif [ -f "Filahi-main/settings.gradle.kts" ]; then
+            echo "PROJECT_DIR=Filahi-main" >> $GITHUB_ENV
+          else
+            echo "Android project not found"
+            exit 1
+          fi
+
+      - name: Build APK
+        run: gradle --no-daemon assembleDebug
+        working-directory: ${{ env.PROJECT_DIR }}
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Fellah-Market-APK
+          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14
